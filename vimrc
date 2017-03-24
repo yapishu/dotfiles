@@ -58,6 +58,10 @@ filetype plugin on
 filetype plugin indent on
 syntax on
 set nocompatible
+set textwidth=0
+set wrapmargin=0
+set wrap
+set linebreak
 
 " Plugin 'vimwiki/vimwiki'
 let g:vimwiki_list = [{'path': '$HOME/SpiderOak Hive/wiki'}]
@@ -70,3 +74,21 @@ nnoremap <leader><space> :nohlsearch<CR>	"turn off search highlight with [\][spa
 " set statusline+=%F
 set ls=2
 set clipboard+=unnamed
+set guifont=Monaco\ 11
+set shell=/bin/fish
+set encoding=utf-8
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+augroup ProjectDrawer
+	  autocmd!
+	    autocmd VimEnter * :Vexplore
+    augroup END
+" Use ctrl-[hjkl] to select the active split!
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>
