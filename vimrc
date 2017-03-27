@@ -83,12 +83,26 @@ let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
-augroup ProjectDrawer
-	  autocmd!
-	    autocmd VimEnter * :Vexplore
-    augroup END
+
+" open the netwrd thing in sidepane
+ augroup ProjectDrawer
+ 	  autocmd!
+ 	    autocmd VimEnter * :Vexplore
+   augroup END
 " Use ctrl-[hjkl] to select the active split!
 nmap <silent> <c-k> :wincmd k<CR>
 nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
+" move to main window on startup
+autocmd VimEnter * wincmd l
+
+" colorscheme with transparent background
+colorscheme solarized
+hi Normal ctermbg=none
+
+" jk to escape insert
+imap jk <ESC>
+
+" comma for leader key
+let mapleader = ","
