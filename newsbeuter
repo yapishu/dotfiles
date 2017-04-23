@@ -1,0 +1,37 @@
+# auto refresh feed options
+
+# auto-reload yes
+# refresh-on-startup yes
+
+always-display-description true
+cookie-cache "~/.newsbeuter/cookies.txt"
+display-article-progress yes
+color listfocus    black  white   bold
+color info black white bold
+notify-always yes
+notify-format "newsbeuter: %n unread articles within %f unread feeds"
+browser google-chrome
+notify-program notify-send
+notify-xterm yes
+notify-screen yes
+
+# special formatting
+
+articlelist-format "%4i %f %D  %?T?|%-17T| ?%t"
+
+article-sort-order date-asc
+
+highlight feedlist    "^  *[0-9]+  *N  "                    color156 default
+highlight articlelist "^  *[0-9]+  *N  "                    color156 default
+
+highlight article     "(^Feed:.*|^Title:.*|^Author:.*)"     color75  default
+highlight article     "(^Link:.*|^Date:.*)"                 color75  default
+highlight article     "^Podcast Download URL:.*"            color71  default
+highlight article     "^Links:"                             white    color240 underline
+highlight article     "\\[[0-9][0-9]*\\]"                   color72  default  bold
+highlight article     "\\[image [0-9][0-9]*\\]"             color72  default  bold
+highlight article     "\\[embedded flash: [0-9][0-9]*\\]"   color72  default  bold
+highlight article     ":.*\\(link\\)$"                      color74  default
+highlight article     ":.*\\(image\\)$"                     color74  default
+highlight article     ":.*\\(embedded flash\\)$"            color74  default
+
